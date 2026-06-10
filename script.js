@@ -225,17 +225,7 @@ async function exportJson() {
 
     const blob = new Blob(
         [JSON.stringify(artikel, null, 2)],
-        { type: "application/json" }
-    );
-
-    const a = document.createElement("a");
-
-    a.href = URL.createObjectURL(blob);
-
-    a.download = "lager5-backup.json";
-
-    a.click();
-}
+        { type: "application/
 
 g("importFile").addEventListener("change", e => {
 
