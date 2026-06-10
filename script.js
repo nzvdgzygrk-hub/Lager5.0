@@ -127,8 +127,9 @@ const store = db
 const req = store.get(id);
 req.onsuccess = () => {
     const artikel = req.result;
-    artikel.status = "Verkauft";
-    store.put(artikel);
+   artikel.status = "Verkauft";
+artikel.photos = [];
+     store.put(artikel);
     render();
 };
 
