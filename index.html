@@ -1,133 +1,47 @@
 <!DOCTYPE html>
 <html lang="de">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Lager 5.0</title>
 
 <style>
-body{
-font-family:Arial;
-max-width:1100px;
-margin:auto;
-padding:15px;
-}
-
-.card{
-border:1px solid #ccc;
-padding:10px;
-border-radius:10px;
-margin:10px 0;
-}
-
-.hidden{
-display:none;
-}
-
-img{
-max-width:120px;
-margin:3px;
-border-radius:6px;
-}
-
-.top{
-display:flex;
-gap:6px;
-flex-wrap:wrap;
-}
-
-#search{
-flex:1;
-}
-
-button{
-padding:8px;
-}
-
-.preview{
-display:flex;
-flex-wrap:wrap;
-gap:5px;
-margin-top:10px;
-}
-
-.preview img{
-width:80px;
-height:80px;
-object-fit:cover;
-}
+body{font-family:Arial;max-width:1100px;margin:auto;padding:15px}
+.card{border:1px solid #ccc;padding:10px;border-radius:10px;margin:10px 0}
+.hidden{display:none}
+img{max-width:120px;margin:3px;border-radius:6px}
+.top{display:flex;gap:6px;flex-wrap:wrap}
+#search{flex:1}
+button{padding:8px}
+.preview{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
+.preview img{width:80px;height:80px;object-fit:cover}
 </style>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
-
 </head>
 <body>
-
 <h1>📦 Lager 5.0</h1>
 <p>Programmiert von F.Kaplan</p>
 
 <div class="top">
 <input id="search" placeholder="Suchen...">
-
-<button onclick="toggleForm()">
-➕ Artikel
-</button>
-
-<button onclick="exportJson()">
-📤 JSON Backup
-</button>
-
+<button onclick="toggleForm()">➕ Artikel</button>
+<button onclick="exportJson()">📤 JSON Backup</button>
 <input type="file" id="importFile">
 </div>
 
 <div id="stats"></div>
 
 <div id="form" class="card hidden">
-
-<input id="title" placeholder="Titel">
-<br><br>
-
-<input id="location" placeholder="Lagerort">
-<br><br>
-
-<input id="price" type="number" placeholder="Preis">
-<br><br>
-
-<label>
-<input id="favorite" type="checkbox">
-⭐ Favorit
-</label>
-
-<br><br>
-
-<textarea
-id="note"
-rows="4"
-style="width:100%;"
-placeholder="Notiz"></textarea>
-
-<br><br>
-
-<button onclick="document.getElementById('photos').click()">
-📷 Fotos hinzufügen
-</button>
-
-<input
-id="photos"
-type="file"
-accept="image/*"
-multiple
-style="display:none">
-
-<div id="preview" class="preview"></div>
-
-<br>
-
-<button onclick="saveItem()">
-💾 Speichern
-</button>
-
+<input id="title" placeholder="Titel"><br><br>
+<input id="location" placeholder="Lagerort"><br><br>
+<input id="price" type="number" placeholder="Preis"><br><br>
+<label><input id="favorite" type="checkbox"> ⭐ Favorit</label><br><br>
+<textarea id="note" rows="4" style="width:100%;" placeholder="Notiz"></textarea><br><br>
+<button onclick="document.getElementById('photos').click()">📷 Fotos hinzufügen</button>
+<input id="photos" type="file" accept="image/*" multiple style="display:none">
+<div id="preview" class="preview"></div><br>
+<button onclick="saveItem()">💾 Speichern</button>
 </div>
 
 <h2>Aktive Artikel</h2>
@@ -137,6 +51,5 @@ style="display:none">
 <div id="sold"></div>
 
 <script src="script.js"></script>
-
 </body>
 </html>
