@@ -293,7 +293,6 @@ async function chatGptExport(id) {
 }
 
 async function render() {
-async function render() {
 
     const daten = await getAllArtikel();
 
@@ -339,7 +338,7 @@ async function render() {
 
 <button onclick="chatGptExport(${x.id})">
 🤖 ChatGPT
-</button>
+</button>`;
 
         if (x.status === "Verkauft") {
 
