@@ -292,6 +292,19 @@ async function chatGptExport(id) {
     };
 }
 
+        const a = document.createElement("a");
+
+        a.href = URL.createObjectURL(blob);
+
+        a.download =
+            (artikel.title || "artikel")
+            .replace(/[^a-z0-9]/gi, "_")
+            + "_chatgpt.json";
+
+        a.click();
+    };
+}
+
 async function render() {
 
     const daten = await getAllArtikel();
