@@ -135,10 +135,11 @@ function saveItem() {
         g("form").classList.add("hidden");
 
         render();
-    };
-    {
+};
 
-  async function getAllArtikel() {
+}
+
+async function getAllArtikel() {
 
     return new Promise(resolve => {
 
