@@ -136,6 +136,7 @@ function saveItem() {
 
         render();
     };
+    {
 
   async function getAllArtikel() {
 
