@@ -340,6 +340,5 @@ async function render() {
 }
 
 g("search").oninput = render;
-}
 
 
