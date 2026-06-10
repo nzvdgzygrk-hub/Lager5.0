@@ -264,6 +264,35 @@ g("importFile").addEventListener("change", e => {
     reader.readAsText(file);
 });
 
+async function chatGptExport(id) {
+
+    const tx = db.transaction("artikel", "readonly");
+
+    const req = tx.objectStore("artikel").get(id);
+
+    req.onsuccess = () => {
+
+        const artikel = req.result;
+
+        const blob = new Blob(
+            [JSON.stringify(artikel, null, 2)],
+            { type: "application/json" }
+        );
+
+        const a = document.createElement("a");
+
+        a.href = URL.createObjectURL(blob);
+
+        a.download =
+            (artikel.title || "artikel")
+            .replace(/[^a-z0-9]/gi, "_")
+            + "_chatgpt.json";
+
+        a.click();
+    };
+}
+
+async function render() {
 async function render() {
 
     const daten = await getAllArtikel();
