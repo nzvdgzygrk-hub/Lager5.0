@@ -301,12 +301,16 @@ async function render() {
              <p>${x.note || ""}</p>
 
              <button onclick="editItem(${x.id})">
-             ✏️ Bearbeiten
-             </button>
+✏️ Bearbeiten
+</button>
 
-             <button onclick="delItem(${x.id})">
-             🗑️ Löschen
-             </button>`;
+<button onclick="delItem(${x.id})">
+🗑️ Löschen
+</button>
+
+<button onclick="chatGptExport(${x.id})">
+🤖 ChatGPT
+</button>
 
         if (x.status === "Verkauft") {
 
