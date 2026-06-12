@@ -352,12 +352,24 @@ if (g("search")) {
 }
     } // render() ENDE
 
-document.addEventListener("input", e => {
-    if (e.target.id === "meinAnteil") {
-        localStorage.setItem(
-            "meinAnteil",
-            e.target.value || ""
-        );
-    }
-});
+const anteilFeld = g("meinAnteil");
+const anteilAnzeige = g("meinAnteilAnzeige");
+const saveAnteil = g("saveAnteil");
 
+function ladeAnteil() {
+    const wert = localStorage.getItem("meinAnteil") || "0";
+
+    if (anteilFeld) anteilFeld.value = wert;
+    if (anteilAnzeige) anteilAnzeige.textContent = wert + " €";
+}
+
+if (saveAnteil) {
+    saveAnteil.onclick = () => {
+        const wert = anteilFeld.value || "0";
+
+        localStorage.setItem("meinAnteil", wert);
+        anteilAnzeige.textContent = wert + " €";
+    };
+}
+
+ladeAnteil();
