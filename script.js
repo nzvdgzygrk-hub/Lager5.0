@@ -340,6 +340,11 @@ async function render() {
         " | ⭐ " + fav +
         " | 💰 Umsatz: " + revenue + " €" +
         " | 🏷️ Lagerwert: " + value + " €";
+
+    const feld = g("meinAnteil");
+
+if (feld) {
+    feld.value = localStorage.getItem("meinAnteil") || "";
 }
 
 if (g("search")) {
