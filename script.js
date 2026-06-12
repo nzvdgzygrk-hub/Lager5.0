@@ -345,3 +345,12 @@ async function render() {
 if (g("search")) {
     g("search").oninput = render;
 }
+document.addEventListener("input", e => {
+    if (e.target.id === "meinAnteil") {
+        localStorage.setItem(
+            "meinAnteil",
+            e.target.value || ""
+        );
+    }
+});
+
