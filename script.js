@@ -350,6 +350,7 @@ if (feld) {
 if (g("search")) {
     g("search").oninput = render;
 }
+    } // render() ENDE
 
 document.addEventListener("input", e => {
     if (e.target.id === "meinAnteil") {
